@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="153.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerJugadors">
+   <children>
+      <Label fx:id="dorsal" layoutX="289.0" layoutY="69.0" text="Dorsal">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="foto" fitHeight="153.0" fitWidth="192.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="posicion" layoutX="201.0" layoutY="65.0" prefHeight="28.0" prefWidth="67.0" text="Posicion">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nombre" layoutX="201.0" layoutY="9.0" prefHeight="43.0" prefWidth="210.0" text="Nombre">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

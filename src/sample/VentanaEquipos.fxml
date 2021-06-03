@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="238.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="349.0" minHeight="10.0" prefHeight="177.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="163.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ImageView fx:id="warriors" fitHeight="130.0" fitWidth="227.0" onMouseClicked="#pulsadoWarriors" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/warriors.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="35.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="nets" fitHeight="129.0" fitWidth="124.0" onMouseClicked="#pulsandoNets" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+         <image>
+            <Image url="@resources/nets.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="85.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="suns" fitHeight="117.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+         <image>
+            <Image url="@resources/suns.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="85.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="heat" fitHeight="137.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@resources/heat.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="85.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="spurs" fitHeight="126.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+         <image>
+            <Image url="@resources/spurs.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="40.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="raptors" fitHeight="161.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <image>
+            <Image url="@resources/raptors.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin>
+      </ImageView>
+   </children>
+</GridPane>

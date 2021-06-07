@@ -31,7 +31,7 @@
             <Insets left="85.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="suns" fitHeight="117.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+      <ImageView fx:id="suns" fitHeight="117.0" fitWidth="122.0" onMouseClicked="#pulsandoSuns" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
          <image>
             <Image url="@resources/suns.png" />
          </image>
@@ -39,7 +39,7 @@
             <Insets left="85.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="heat" fitHeight="137.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <ImageView fx:id="heat" fitHeight="137.0" fitWidth="108.0" onMouseClicked="#pulsandoHeat" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <image>
             <Image url="@resources/heat.png" />
          </image>
@@ -47,15 +47,15 @@
             <Insets left="85.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="spurs" fitHeight="126.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+      <ImageView fx:id="spurs" fitHeight="126.0" fitWidth="230.0" onMouseClicked="#pulsandoNuggets" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
          <image>
-            <Image url="@resources/spurs.png" />
+            <Image url="@resources/denver.png" />
          </image>
          <GridPane.margin>
             <Insets left="40.0" />
          </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="raptors" fitHeight="161.0" fitWidth="303.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <ImageView fx:id="raptors" fitHeight="161.0" fitWidth="303.0" onMouseClicked="#pulsandoRaptors" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <image>
             <Image url="@resources/raptors.png" />
          </image>

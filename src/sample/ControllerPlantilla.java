@@ -26,17 +26,20 @@ public class ControllerPlantilla {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaJugador.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
              controllerJugador = loader.getController();
-            Scene scene = new Scene(root,650,500);
+            Scene scene = new Scene(root,605,315);
             stage.setScene(scene);
             stage.setTitle("Ventana 2");
             stage.show();
+
+
         } catch(Exception e) {
             System.out.println("No se ha podido abrir la segunda ventana, algo pasa.");
         }
     }
 
-    private void abrirJugador(Jugador jugador){
+    @FXML
+    private void abrirJugador(){
         abrirVentanaIndividual();
-
+        controllerJugador.ponerInfo();
     }
 }

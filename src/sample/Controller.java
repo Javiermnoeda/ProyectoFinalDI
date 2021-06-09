@@ -15,44 +15,33 @@ public class Controller {
     ControllerPlantilla controllerJugadores = null;
 
     Jugador steph,klay, dbook, cp3, jokic, jammal, kd, jh, jimmy, bam, kl7, p;
+    Equipo gsw,bkn,pho,mia,den,tor;
 
     @FXML
     ImageView warriors,suns,spurs,nets,heat,raptors;
 
-    ArrayList<Jugador> listaWarriors = new ArrayList<>();
-    ArrayList<Jugador> listaSuns = new ArrayList<>();
-    ArrayList<Jugador> listaSpurs = new ArrayList<>();
-    ArrayList<Jugador> listaNets = new ArrayList<>();
-    ArrayList<Jugador> listaHeat = new ArrayList<>();
-    ArrayList<Jugador> listaRaptors = new ArrayList<>();
-
     @FXML
     public void initialize(){
-        steph = new Jugador("Stephen Curry",false,"GSW","Base",30);
-        klay = new Jugador("Klay Thompson",false,"GSW","Escolta",11);
-        dbook = new Jugador("Devin Booker",false,"PHO","Escolta",1);
-        cp3 = new Jugador("Chris Paul",false,"PHO","Base",3);
-        jokic = new Jugador("Nikola Jokic",false,"DEN","Pivot",15);
-        jammal = new Jugador("Jammal Murray",false,"DEN","Base",27);
-        kd = new Jugador("Kevin Durant",false,"BKN","Alero",7);
-        jh = new Jugador("James Harden",false,"BKN","Base",13);
-        jimmy = new Jugador("Jimmy Butler",false,"MIA","Alero",22);
-        bam = new Jugador("Bam Adebayo",false,"MIA","Pivot",13);
-        kl7 = new Jugador("Kyle Lowry",false,"TOR","Base",7);
-        p = new Jugador("Pascal Siakam",false,"TOR","Ala-Pivot",43);
+        steph = new Jugador("Stephen Curry",false,"GSW","Base",30, 32F,5.8F,5.5F,new Image("sample/resources/curry.PNG"));
+        klay = new Jugador("Klay Thompson",false,"GSW","Escolta",11,19.5F,2.3F,3.5F,new Image("sample/resources/klay.PNG"));
+        dbook = new Jugador("Devin Booker",false,"PHO","Escolta",1,25.6F,4.3F,4.2F,new Image("sample/resources/dbook.PNG"));
+        cp3 = new Jugador("Chris Paul",false,"PHO","Base",3,16.4F,8.9F,4.5F, new Image("sample/resources/cp3.PNG"));
+        jokic = new Jugador("Nikola Jokic",false,"DEN","Pivot",15,26.4F,8.3F,10.8F, new Image("sample/resources/jokic.PNG"));
+        jammal = new Jugador("Jammal Murray",false,"DEN","Base",27,21.2F,4.8F,4F,new Image("sample/resources/jammal.PNG"));
+        kd = new Jugador("Kevin Durant",false,"BKN","Alero",7,26.9F,5.6F,7.1F, new Image("sample/resources/kd.PNG"));
+        jh = new Jugador("James Harden",false,"BKN","Base",13,24.6F,10.8F,7.9F,new Image("sample/resources/harden.PNG"));
+        jimmy = new Jugador("Jimmy Butler",false,"MIA","Alero",22,21.5F,7.1F,6.9F,new Image("sample/resources/jimmy.PNG"));
+        bam = new Jugador("Bam Adebayo",false,"MIA","Pivot",13,18.7F,5.4F,9.0F, new Image("sample/resources/bam.PNG"));
+        kl7 = new Jugador("Kyle Lowry",false,"TOR","Base",7,17.2F,7.3F,5.4F,new Image("sample/resources/kl7.PNG"));
+        p = new Jugador("Pascal Siakam",false,"TOR","Ala-Pivot",43,21.4F,4.5F,7.2F,new Image("sample/resources/pascal.PNG"));
 
-        listaWarriors.add(steph);
-        listaWarriors.add(klay);
-        listaSuns.add(dbook);
-        listaSuns.add(cp3);
-        listaSpurs.add(jokic);
-        listaSpurs.add(jammal);
-        listaNets.add(kd);
-        listaNets.add(jh);
-        listaHeat.add(bam);
-        listaHeat.add(jimmy);
-        listaRaptors.add(kl7);
-        listaRaptors.add(p);
+
+        gsw = new Equipo("Golden State Warriors",new Image("sample/resources/warriors.PNG"),steph,klay);
+        bkn = new Equipo("Brooklyn Nets",new Image("sample/resources/nets.PNG"),kd,jh);
+        pho = new Equipo("Phoenix Suns",new Image("sample/resources/suns.PNG"),dbook,cp3);
+        mia = new Equipo("Miami Heat",new Image("sample/resources/heat.PNG"),jimmy,bam);
+        den = new Equipo("Denver Nuggets",new Image("sample/resources/denver.PNG"),jokic,jammal);
+        tor = new Equipo("Toronto Raptors",new Image("sample/resources/raptors.PNG"),kl7,p);
     }
 
     @FXML
@@ -75,20 +64,7 @@ public class Controller {
     public void pulsadoWarriors(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/warriors.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenJ2 = new Image("sample/resources/klay.PNG");
-            Image imagenJ1 = new Image("sample/resources/curry.PNG");
-            controllerJugadores.foto1.setImage(imagenJ1);
-            controllerJugadores.foto2.setImage(imagenJ2);
-
-
-            controllerJugadores.nombreEquipo.setText(steph.equipo);
-            controllerJugadores.nombreJ1.setText(steph.nombre);
-            controllerJugadores.nombreJ2.setText(klay.nombre);
+            pasarInfoEquipo(gsw);
         } catch (Exception e){
            System.out.println("No se que pasa");
         }
@@ -98,20 +74,7 @@ public class Controller {
     public void pulsandoNets(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/nets.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenDurant = new Image("sample/resources/kd.PNG");
-            Image imagenHarden = new Image("sample/resources/harden.PNG");
-            controllerJugadores.foto1.setImage(imagenDurant);
-            controllerJugadores.foto2.setImage(imagenHarden);
-
-
-            controllerJugadores.nombreEquipo.setText(kd.equipo);
-            controllerJugadores.nombreJ1.setText(kd.nombre);
-            controllerJugadores.nombreJ2.setText(jh.nombre);
+            pasarInfoEquipo(bkn);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -121,20 +84,7 @@ public class Controller {
     public void pulsandoHeat(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/heat.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenJ1 = new Image("sample/resources/jimmy.PNG");
-            Image imagenJ2 = new Image("sample/resources/bam.PNG");
-            controllerJugadores.foto1.setImage(imagenJ1);
-            controllerJugadores.foto2.setImage(imagenJ2);
-
-
-            controllerJugadores.nombreEquipo.setText(jimmy.equipo);
-            controllerJugadores.nombreJ1.setText(jimmy.nombre);
-            controllerJugadores.nombreJ2.setText(bam.nombre);
+            pasarInfoEquipo(mia);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -144,20 +94,7 @@ public class Controller {
     public void pulsandoSuns(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/suns.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenJ1 = new Image("sample/resources/dbook.PNG");
-            Image imagenJ2 = new Image("sample/resources/cp3.PNG");
-            controllerJugadores.foto1.setImage(imagenJ1);
-            controllerJugadores.foto2.setImage(imagenJ2);
-
-
-            controllerJugadores.nombreEquipo.setText(dbook.equipo);
-            controllerJugadores.nombreJ1.setText(dbook.nombre);
-            controllerJugadores.nombreJ2.setText(cp3.nombre);
+            pasarInfoEquipo(pho);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -167,20 +104,7 @@ public class Controller {
     public void pulsandoNuggets(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/denver.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenJ1 = new Image("sample/resources/jokic.PNG");
-            Image imagenJ2 = new Image("sample/resources/jammal.PNG");
-            controllerJugadores.foto1.setImage(imagenJ1);
-            controllerJugadores.foto2.setImage(imagenJ2);
-
-
-            controllerJugadores.nombreEquipo.setText(jokic.equipo);
-            controllerJugadores.nombreJ1.setText(jokic.nombre);
-            controllerJugadores.nombreJ2.setText(jammal.nombre);
+            pasarInfoEquipo(den);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -190,23 +114,21 @@ public class Controller {
     public void pulsandoRaptors(){
         try{
             abrirVentanaJugadores();
-
-            Image imagenEquipo = new Image("sample/resources/raptors.PNG");
-            controllerJugadores.imagenEquipo.setImage(imagenEquipo);
-
-
-            Image imagenJ1 = new Image("sample/resources/kl7.PNG");
-            Image imagenJ2 = new Image("sample/resources/pascal.PNG");
-            controllerJugadores.foto1.setImage(imagenJ1);
-            controllerJugadores.foto2.setImage(imagenJ2);
-
-
-            controllerJugadores.nombreEquipo.setText(kl7.equipo);
-            controllerJugadores.nombreJ1.setText(kl7.nombre);
-            controllerJugadores.nombreJ2.setText(p.nombre);
+            pasarInfoEquipo(tor);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
+    }
+
+    public void pasarInfoEquipo(Equipo equipo){
+        controllerJugadores.imagenEquipo.setImage(equipo.imagen);
+        controllerJugadores.nombreEquipo.setText(equipo.nombre);
+
+        controllerJugadores.foto1.setImage(equipo.jugador.foto);
+        controllerJugadores.foto2.setImage(equipo.jugador2.foto);
+
+        controllerJugadores.nombreJ1.setText(equipo.jugador.nombre);
+        controllerJugadores.nombreJ2.setText(equipo.jugador2.nombre);
     }
 }
 

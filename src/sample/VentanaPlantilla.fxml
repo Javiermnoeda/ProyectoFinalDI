@@ -13,7 +13,7 @@
             <ImageView fx:id="imagenEquipo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="233.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
+            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="269.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="20.0" />
                </font>
@@ -25,7 +25,7 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="475.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
       <VBox layoutX="58.0" layoutY="227.0" prefHeight="242.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="foto1" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirVentanaIndividual" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="foto1" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirJugador" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="nombreJ1" prefHeight="29.0" prefWidth="115.0" text="Label">
                <VBox.margin>
                   <Insets left="50.0" top="12.0" />
@@ -35,7 +35,7 @@
       </VBox>
       <VBox layoutX="461.0" layoutY="227.0" prefHeight="265.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="foto2" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirVentanaIndividual" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="foto2" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirJugador" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="nombreJ2" prefHeight="32.0" prefWidth="120.0" text="Label">
                <VBox.margin>
                   <Insets left="50.0" top="12.0" />

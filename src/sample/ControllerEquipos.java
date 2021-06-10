@@ -8,11 +8,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
+public class ControllerEquipos {
 
-public class Controller {
-
-    ControllerPlantilla controllerJugadores = null;
+    ControllerPlantilla controllerPlantilla = null;
 
     Jugador steph,klay, dbook, cp3, jokic, jammal, kd, jh, jimmy, bam, kl7, p;
     Equipo gsw,bkn,pho,mia,den,tor;
@@ -45,16 +43,19 @@ public class Controller {
     }
 
     @FXML
-    private void abrirVentanaJugadores() {
+    private void abrirVentanaJugadores(Equipo equipo) {
         try {
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaPlantilla.fxml"));
-            AnchorPane root = (AnchorPane) loader.load();
-            controllerJugadores = loader.getController();
-            Scene scene = new Scene(root,650,500);
-            stage.setScene(scene);
-            stage.setTitle("Ventana 2");
-            stage.show();
+            if (controllerPlantilla == null) {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaPlantilla.fxml"));
+                AnchorPane root = (AnchorPane) loader.load();
+                controllerPlantilla = loader.getController();
+                Scene scene = new Scene(root, 650, 500);
+                stage.setScene(scene);
+                stage.setTitle("Ventana 2");
+                stage.show();
+            }
+            controllerPlantilla.enviarEquipo(equipo);
         } catch(Exception e) {
             System.out.println("No se ha podido abrir la segunda ventana, algo pasa.");
         }
@@ -63,8 +64,7 @@ public class Controller {
     @FXML
     public void pulsadoWarriors(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(gsw);
+            abrirVentanaJugadores(gsw);
         } catch (Exception e){
            System.out.println("No se que pasa");
         }
@@ -73,8 +73,7 @@ public class Controller {
     @FXML
     public void pulsandoNets(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(bkn);
+            abrirVentanaJugadores(bkn);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -83,8 +82,7 @@ public class Controller {
     @FXML
     public void pulsandoHeat(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(mia);
+            abrirVentanaJugadores(mia);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -93,8 +91,7 @@ public class Controller {
     @FXML
     public void pulsandoSuns(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(pho);
+            abrirVentanaJugadores(pho);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -103,8 +100,7 @@ public class Controller {
     @FXML
     public void pulsandoNuggets(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(den);
+            abrirVentanaJugadores(den);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
@@ -113,22 +109,10 @@ public class Controller {
     @FXML
     public void pulsandoRaptors(){
         try{
-            abrirVentanaJugadores();
-            pasarInfoEquipo(tor);
+            abrirVentanaJugadores(tor);
         } catch (Exception e){
             System.out.println("No se que pasa");
         }
-    }
-
-    public void pasarInfoEquipo(Equipo equipo){
-        controllerJugadores.imagenEquipo.setImage(equipo.imagen);
-        controllerJugadores.nombreEquipo.setText(equipo.nombre);
-
-        controllerJugadores.foto1.setImage(equipo.jugador.foto);
-        controllerJugadores.foto2.setImage(equipo.jugador2.foto);
-
-        controllerJugadores.nombreJ1.setText(equipo.jugador.nombre);
-        controllerJugadores.nombreJ2.setText(equipo.jugador2.nombre);
     }
 }
 

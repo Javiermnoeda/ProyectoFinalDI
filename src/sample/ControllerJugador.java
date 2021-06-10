@@ -6,7 +6,8 @@ import javafx.scene.image.ImageView;
 
 public class ControllerJugador {
 
-    private Controller controller;
+    ControllerPlantilla controllerPlantilla = null;
+    ControllerEquipos controllerEquipos = null;
 
     @FXML
     ImageView foto;
@@ -14,16 +15,14 @@ public class ControllerJugador {
     @FXML
     Label nombre,dorsal,posicion,labelPuntos,labelAsistencias,labelRebotes;
 
-     public void ponerInfo(){
-         try {
-             nombre.setText(controller.steph.nombre);
-             dorsal.setText(String.valueOf(controller.steph.dorsal));
-             posicion.setText(controller.steph.posicion);
-             labelPuntos.setText(String.valueOf(controller.steph.puntos));
-             labelAsistencias.setText(String.valueOf(controller.steph.asistencias));
-             labelRebotes.setText(String.valueOf(controller.steph.rebotes));
-         } catch (Exception e){
-             System.out.println("No se puedo poner la info");
-         }
+    public void enviarJugador(Jugador jugador){
+            nombre.setText(jugador.nombre);
+            foto.setImage(jugador.foto);
+            dorsal.setText(String.valueOf(jugador.dorsal));
+            posicion.setText(jugador.posicion);
+            labelPuntos.setText(String.valueOf(jugador.puntos));
+            labelAsistencias.setText(String.valueOf(jugador.asistencias));
+            labelRebotes.setText(String.valueOf(jugador.rebotes));
     }
+
 }

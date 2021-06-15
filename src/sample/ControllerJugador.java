@@ -9,7 +9,7 @@ public class ControllerJugador {
     ControllerPlantilla controllerPlantilla = null;
     ControllerEquipos controllerEquipos = null;
 
-    Jugador jugadorSeleccionado = null;
+    public Jugador jugadorSeleccionado = null;
 
     @FXML
     ImageView foto,imagenFavorito;
@@ -27,17 +27,17 @@ public class ControllerJugador {
             labelAsistencias.setText(String.valueOf(jugador.asistencias));
             labelRebotes.setText(String.valueOf(jugador.rebotes));
             labelMedia.setText(String.valueOf(jugador.media));
-            jugadorFavorito();
     }
 
     @FXML
     public void jugadorFavorito() {
-        jugadorSeleccionado.esFavorito=! jugadorSeleccionado.esFavorito;// El simbolo lo que dice es lo contrario ej: si es falso es verdadero y viceversa
+        jugadorSeleccionado.esFavorito=! jugadorSeleccionado.esFavorito; // El simbolo lo que dice es lo contrario ej: si es falso es verdadero y viceversa
+        controllerPlantilla.actualizarFavorito1();
+        controllerPlantilla.actualizarFavorito2();
         Binder.bindJugador(jugadorSeleccionado,imagenFavorito); // TODO actualizar a la ventana anterior
     }
 
     public void enviarControllerJugadores(ControllerPlantilla controllerPlantilla1){
         controllerPlantilla = controllerPlantilla1;
     }
-
 }

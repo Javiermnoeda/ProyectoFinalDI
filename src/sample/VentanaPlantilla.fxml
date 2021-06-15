@@ -6,32 +6,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="536.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPlantilla">
+<AnchorPane prefHeight="536.0" prefWidth="729.0" style="-fx-background-image: url(&quot;src/sample/resources/fondoPantalla&quot;);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPlantilla">
    <children>
       <BorderPane prefHeight="114.0" prefWidth="600.0">
          <left>
             <ImageView fx:id="imagenEquipo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="269.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
+            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="405.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Carlito Bold Italic" size="23.0" />
+                  <Font name="System Bold Italic" size="23.0" />
                </font>
                <padding>
                   <Insets left="30.0" />
                </padding></Label>
          </center>
       </BorderPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="475.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
       <VBox layoutX="58.0" layoutY="227.0" prefHeight="242.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="foto1" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirJugador1" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nombreJ1" prefHeight="29.0" prefWidth="128.0" text="Label">
+            <Label fx:id="nombreJ1" prefHeight="29.0" prefWidth="138.0" text="Label">
                <VBox.margin>
                   <Insets left="50.0" top="12.0" />
                </VBox.margin>
                <font>
-                  <Font name="Carlito Bold Italic" size="15.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
             <ImageView fx:id="balon1" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -39,7 +38,7 @@
                   <Insets left="65.0" top="10.0" />
                </VBox.margin>
                <image>
-                  <Image url="@resources/favoritoLleno.png" />
+                  <Image url="@resources/favoritoLLeno.png" />
                </image></ImageView>
          </children>
       </VBox>
@@ -51,7 +50,7 @@
                   <Insets left="50.0" top="12.0" />
                </VBox.margin>
                <font>
-                  <Font name="Carlito Bold Italic" size="15.0" />
+                  <Font name="System Bold Italic" size="15.0" />
                </font>
             </Label>
             <ImageView fx:id="balon2" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -59,10 +58,15 @@
                   <Insets left="65.0" top="10.0" />
                </VBox.margin>
                <image>
-                  <Image url="@resources/favoritoLleno.png" />
+                  <Image url="@resources/favoritoLLeno.png" />
                </image>
             </ImageView>
          </children>
       </VBox>
+      <Label layoutX="203.0" layoutY="150.0" prefHeight="58.0" prefWidth="258.0" text="Selecciona un Jugador">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

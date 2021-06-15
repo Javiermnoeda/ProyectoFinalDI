@@ -15,7 +15,7 @@ public class ControllerPlantilla {
     ControllerEquipos controllerEquipos = null;
 
     @FXML
-    private ImageView foto1, foto2, imagenEquipo, balon1, balon2;
+    public ImageView foto1, foto2, imagenEquipo, balon1, balon2;
 
     @FXML
     private Label nombreEquipo, nombreJ1, nombreJ2;
@@ -44,8 +44,7 @@ public class ControllerPlantilla {
     private void abrirJugador1(){
         try{
             abrirVentanaIndividual(equipoSeleccionado.jugador);
-            equipoSeleccionado.jugador=controllerJugador.jugadorSeleccionado;
-            mostrarBalon1();
+
         } catch (Exception e){
             System.out.println("No se pudo mandar la info");
         }
@@ -55,19 +54,18 @@ public class ControllerPlantilla {
     private void abrirJugador2(){
         try{
             abrirVentanaIndividual(equipoSeleccionado.jugador2);
-            equipoSeleccionado.jugador2=controllerJugador.jugadorSeleccionado;
-            mostrarBalon2();
+
         } catch (Exception e){
             System.out.println("No se pudo mandar la info");
         }
     }
 
-    public void mostrarBalon1(){
-        balon1.setVisible(controllerJugador.jugadorSeleccionado.esFavorito = true);
+    public void actualizarFavorito1(){
+        Binder.bindFavorito(equipoSeleccionado.jugador,balon1);
     }
 
-    public void mostrarBalon2(){
-        balon2.setVisible(controllerJugador.jugadorSeleccionado.esFavorito = true);
+    public void actualizarFavorito2(){
+        Binder.bindFavorito(equipoSeleccionado.jugador2,balon2);
     }
 
     public void enviarEquipo(Equipo equipo) {

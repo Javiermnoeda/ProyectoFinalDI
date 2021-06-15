@@ -33,7 +33,7 @@ public class ControllerPlantilla {
                 controllerJugador.enviarControllerJugadores(this);
                  controllerJugador.enviarJugador(jugador);
                 stage.setScene(scene);
-                stage.setTitle("Informacion De Jugador");
+                stage.setTitle("Informacion De "+jugador.nombre);
                 stage.show();
         } catch(Exception e) {
             System.out.println("No se ha podido abrir la segunda ventana, algo pasa.");

@@ -8,12 +8,12 @@
 
 <AnchorPane prefHeight="536.0" prefWidth="729.0" style="-fx-background-image: url(&quot;src/sample/resources/fondoPantalla&quot;);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPlantilla">
    <children>
-      <BorderPane prefHeight="114.0" prefWidth="600.0">
+      <BorderPane prefHeight="150.0" prefWidth="729.0">
          <left>
             <ImageView fx:id="imagenEquipo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="405.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
+            <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="483.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
                <font>
                   <Font name="System Bold Italic" size="23.0" />
                </font>

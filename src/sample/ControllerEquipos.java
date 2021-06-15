@@ -51,7 +51,7 @@ public class ControllerEquipos {
                 controllerPlantilla = loader.getController();
                 Scene scene = new Scene(root, 650, 500);
                 stage.setScene(scene);
-                stage.setTitle("Ventana 2");
+                stage.setTitle("Plantilla de "+equipo.nombre);
                 stage.show();
             controllerPlantilla.enviarEquipo(equipo);
         } catch(Exception e) {

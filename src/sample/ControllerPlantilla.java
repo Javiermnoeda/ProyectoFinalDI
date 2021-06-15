@@ -15,7 +15,7 @@ public class ControllerPlantilla {
     ControllerEquipos controllerEquipos = null;
 
     @FXML
-    private ImageView foto1, foto2, imagenEquipo;
+    private ImageView foto1, foto2, imagenEquipo, balon1, balon2;
 
     @FXML
     private Label nombreEquipo, nombreJ1, nombreJ2;
@@ -25,17 +25,16 @@ public class ControllerPlantilla {
     @FXML
     private void abrirVentanaIndividual(Jugador jugador) {
         try {
-            if (controllerJugador == null){
                 Stage stage = new Stage();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaJugador.fxml"));
                 AnchorPane root = (AnchorPane) loader.load();
                 controllerJugador = loader.getController();
                 Scene scene = new Scene(root,605,315);
+                controllerJugador.enviarControllerJugadores(this);
+                 controllerJugador.enviarJugador(jugador);
                 stage.setScene(scene);
                 stage.setTitle("Informacion De Jugador");
                 stage.show();
-            }
-            controllerJugador.enviarJugador(jugador);
         } catch(Exception e) {
             System.out.println("No se ha podido abrir la segunda ventana, algo pasa.");
         }
@@ -45,6 +44,8 @@ public class ControllerPlantilla {
     private void abrirJugador1(){
         try{
             abrirVentanaIndividual(equipoSeleccionado.jugador);
+            equipoSeleccionado.jugador=controllerJugador.jugadorSeleccionado;
+            mostrarBalon1();
         } catch (Exception e){
             System.out.println("No se pudo mandar la info");
         }
@@ -54,9 +55,19 @@ public class ControllerPlantilla {
     private void abrirJugador2(){
         try{
             abrirVentanaIndividual(equipoSeleccionado.jugador2);
+            equipoSeleccionado.jugador2=controllerJugador.jugadorSeleccionado;
+            mostrarBalon2();
         } catch (Exception e){
             System.out.println("No se pudo mandar la info");
         }
+    }
+
+    public void mostrarBalon1(){
+        balon1.setVisible(controllerJugador.jugadorSeleccionado.esFavorito = true);
+    }
+
+    public void mostrarBalon2(){
+        balon2.setVisible(controllerJugador.jugadorSeleccionado.esFavorito = true);
     }
 
     public void enviarEquipo(Equipo equipo) {
@@ -70,6 +81,4 @@ public class ControllerPlantilla {
         nombreJ1.setText(equipo.jugador.nombre);
         nombreJ2.setText(equipo.jugador2.nombre);
     }
-
-
 }

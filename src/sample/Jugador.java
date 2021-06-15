@@ -8,12 +8,13 @@ public class Jugador {
     public String equipo;
     public String posicion;
     public int dorsal;
+    public int media;
     public float puntos;
     public float asistencias;
     public float rebotes;
     public Image foto;
 
-    public Jugador (String nombre, boolean esFavorito, String equipo, String posicion, int dorsal, float puntos, float asistencias, float rebotes, Image foto){
+    public Jugador (String nombre, boolean esFavorito, String equipo, String posicion, int dorsal, float puntos, float asistencias, float rebotes, Image foto, int media){
         this.esFavorito = esFavorito;
         this.nombre = nombre;
         this.equipo = equipo;
@@ -23,5 +24,6 @@ public class Jugador {
         this.asistencias = asistencias;
         this.rebotes = rebotes;
         this.foto=foto;
+        this.media=media;
     }
 }

@@ -15,7 +15,7 @@
          <center>
             <Label fx:id="nombreEquipo" prefHeight="49.0" prefWidth="269.0" text="Nombre Equipo" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="Carlito Bold Italic" size="23.0" />
                </font>
                <padding>
                   <Insets left="30.0" />
@@ -26,11 +26,21 @@
       <VBox layoutX="58.0" layoutY="227.0" prefHeight="242.0" prefWidth="200.0">
          <children>
             <ImageView fx:id="foto1" fitHeight="127.0" fitWidth="203.0" onMouseClicked="#abrirJugador1" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nombreJ1" prefHeight="29.0" prefWidth="115.0" text="Label">
+            <Label fx:id="nombreJ1" prefHeight="29.0" prefWidth="128.0" text="Label">
                <VBox.margin>
                   <Insets left="50.0" top="12.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Carlito Bold Italic" size="15.0" />
+               </font>
             </Label>
+            <ImageView fx:id="balon1" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <VBox.margin>
+                  <Insets left="65.0" top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@resources/favoritoLleno.png" />
+               </image></ImageView>
          </children>
       </VBox>
       <VBox layoutX="461.0" layoutY="227.0" prefHeight="265.0" prefWidth="200.0">
@@ -40,7 +50,18 @@
                <VBox.margin>
                   <Insets left="50.0" top="12.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Carlito Bold Italic" size="15.0" />
+               </font>
             </Label>
+            <ImageView fx:id="balon2" fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <VBox.margin>
+                  <Insets left="65.0" top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@resources/favoritoLleno.png" />
+               </image>
+            </ImageView>
          </children>
       </VBox>
    </children>
